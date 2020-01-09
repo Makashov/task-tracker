@@ -1,3 +1,10 @@
+getToken:
+    path: /user
+    methods: GET
+    controller: App\Controller\UserController::index
+
 index:
-    path: /
+    path: /{reactRouting}
     controller: App\Controller\HomeController::index
+    defaults:
+        reactRouting: null

@@ -5,6 +5,24 @@ import MainMenu from "./components/mainMenu";
 
 class App extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            user: {
+                accessToken: null
+            }
+        }
+    }
+
+    componentDidMount() {
+        const accessToken = localStorage.getItem('accessToken');
+        this.setState({
+            ...this.state,
+            accessToken: accessToken
+        })
+    }
+
     render() {
         return (
             <div className="container-fluid">
